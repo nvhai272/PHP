@@ -1,8 +1,8 @@
 <?php
 function connectDatabase(): mysqli
 {
-     $servername = "localhost";
-    //$servername = "127.0.0.1:3306";
+    //$servername = "localhost";
+    $servername = "127.0.0.1:3306";
     $username = "root";
     $password = "12345678";
     $dbname = "php";
@@ -11,14 +11,13 @@ function connectDatabase(): mysqli
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
+ 
     return $conn;
 }
 
 function createDatabase()
 {
-    $c = mysqli_connect('127.0.0.1:3306', 'root', '12345678');
-
+    $c = connectDatabase();
     if (!$c) {
         die("Connection failed: " . mysqli_connect_error());
     }
