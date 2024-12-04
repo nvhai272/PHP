@@ -1,7 +1,5 @@
 <?php
-// Thiết lập cookie nếu người dùng đã nhấn nút "Save"
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Kiểm tra từng trường trước khi lưu vào cookie
     if (isset($_POST["homeTown"])) {
         setcookie("homeTown", $_POST["homeTown"], time() + (86400 * 30), "/");
     }
@@ -11,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["hobbies"])) {
         setcookie("hobbies", json_encode($_POST["hobbies"]), time() + (86400 * 30), "/");
     } else {
-        setcookie("hobbies", "", time() - 3600, "/"); // Xóa cookie nếu không chọn sở thích nào
+        setcookie("hobbies", "", time() - 3600, "/"); // Xoa
     }
     if (isset($_POST["favoriteColor"])) {
         setcookie("favoriteColor", $_POST["favoriteColor"], time() + (86400 * 30), "/");
@@ -21,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = "";
 }
 
-// Lấy dữ liệu từ cookie nếu tồn tại
 $homeTown = isset($_COOKIE["homeTown"]) ? $_COOKIE["homeTown"] : "";
 $gender = isset($_COOKIE["gender"]) ? $_COOKIE["gender"] : "";
 $hobbies = isset($_COOKIE["hobbies"]) ? json_decode($_COOKIE["hobbies"]) : [];

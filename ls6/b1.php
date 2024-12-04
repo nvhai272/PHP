@@ -1,3 +1,17 @@
+<?php
+function swapFloat(&$x, &$y) {
+    $temp = $x;
+    $x = $y;
+    $y = $temp;
+}
+
+$x = 1.2;
+$y = 3.4;
+
+echo "Before swap: x = $x, y = $y\n";
+swapFloat($x, $y);
+echo "After swap: x = $x, y = $y\n";
+?>
 
 
 <?php
@@ -9,10 +23,8 @@ function displayInfo($params = []) {
     echo "Name: $name, Age: $age\n";
 }
 
-// Gọi hàm với các tham số đặt tên
 displayInfo(['name' => 'Alice', 'age' => 25]);
 
-// Gọi hàm chỉ với một số tham số
 displayInfo(['name' => 'Bob']);
 
 displayInfo();
