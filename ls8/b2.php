@@ -1,6 +1,8 @@
 <?php
 include 'b1.php';
-session_start();
+ob_end_clean();   // Clear the buffer without displaying it
+
+// session_start();
 $connect = connectDatabase();
 
 $query = "SELECT * FROM student";
@@ -25,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Fetch all records to display
 $result = $connect->query("SELECT * FROM student");
 ?>
 

@@ -62,7 +62,7 @@
         $data['hometown'] = $_POST['hometown'];
     }
 
-    if (!empty($_POST['hobbies']) && is_array($_POST['hobbies'])) {
+    if (!empty($_POST['hobbies']) && is_array(value: $_POST['hobbies'])) {
         $data['hobbies'] = $_POST['hobbies']; 
     } else {
         $errors['hobbies'] = "Vui lòng chọn ít nhất một sở thích.";

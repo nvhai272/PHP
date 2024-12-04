@@ -8,6 +8,7 @@ function displayDateTime() {
 
 displayDateTime();
 ?>
+
 <script>
     setInterval(function() {
         window.location.reload();

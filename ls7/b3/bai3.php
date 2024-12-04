@@ -11,3 +11,4 @@ $content = $argv[2];
 file_put_contents($filename, $content);
 echo "Đã tạo file $filename với nội dung: \"$content\"\n";
 ?>
+                    

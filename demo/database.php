@@ -77,3 +77,4 @@ function createDatabase()
 
     mysqli_close($c);
 }
+?>
