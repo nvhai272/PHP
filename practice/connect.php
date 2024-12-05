@@ -20,9 +20,9 @@ function connectDatabase(): bool|mysqli
     mysqli_query($connect, "CREATE DATABASE IF NOT EXISTS $db");
 
     if (!mysqli_select_db($connect, $db)) {
-        echo "<br>Truy cap db khong thanh cong";
+        echo "<br>Succeeded access to database ";
     } else {
-        echo "<br>Truy cap db thanh cong";
+        echo "<br>Loss of access";
     }
     return $connect;
 }
